@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="A responsive infinite-loop image slider by Tanka Joshi.">
+  <title>Wanderlight Gallery | Tanka Joshi</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="slider.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="#top">Wander<span>light</span></a>
+    <a class="header-link" href="https://github.com/YOUR-USERNAME"
+       target="_blank" rel="noopener noreferrer">GitHub</a>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <p class="eyebrow">Photo Gallery</p>
+      <h1>See the world, <span>one slide at a time.</span></h1>
+      <p class="lead">
+        A hand-built image slider with smooth sliding, endless looping
+        and touch-friendly controls.
+      </p>
+    </section>
+
+    <!-- Only the slides are written by hand. slider.js builds the arrows,
+         dots, counter and play button, and adds the clones for looping. -->
+    <section class="slider" id="gallery" aria-label="Landscape photo gallery">
+      <div class="slider__viewport">
+        <div class="slider__track">
+
+          <figure class="slide">
+            <img src="images/valley.jpg"
+                 alt="Autumn valley beneath tall granite cliffs and waterfalls">
+            <figcaption>
+              <span class="tag">Valley</span>
+              <strong>Where Giants Rest</strong>
+              <small>Photo: Aniket Deole · Unsplash</small>
+            </figcaption>
+          </figure>
+
+          <figure class="slide">
+            <img src="images/meadow.jpg"
+                 alt="Green meadow and still lake with snowy mountains in the distance">
+            <figcaption>
+              <span class="tag">Meadow</span>
+              <strong>Quiet Waters</strong>
+              <small>Photo: Peter Thomas · Unsplash</small>
+            </figcaption>
+          </figure>
+
+          <figure class="slide">
+            <img src="images/dolomites.jpg"
+                 alt="Snow-dusted granite ridges rising above autumn larch trees">
+            <figcaption>
+              <span class="tag">Dolomites</span>
+              <strong>Granite Ridges</strong>
+              <small>Photo: Unsplash</small>
+            </figcaption>
+          </figure>
+
+          <figure class="slide">
+            <img src="images/pier.jpg"
+                 alt="Wooden pier stretching into calm water at sunset">
+            <figcaption>
+              <span class="tag">Pier</span>
+              <strong>Last Light at the Pier</strong>
+              <small>Photo: Unsplash</small>
+            </figcaption>
+          </figure>
+
+          <figure class="slide">
+            <img src="images/canyon.jpg"
+                 alt="Smooth orange sandstone canyon walls curving around blue sky">
+            <figcaption>
+              <span class="tag">Canyon</span>
+              <strong>Carved by Wind</strong>
+              <small>Photo: Ashim D'Silva · Unsplash</small>
+            </figcaption>
+          </figure>
+
+          <figure class="slide">
+            <img src="images/forest.jpg"
+                 alt="Bright green fern leaves in a dark forest">
+            <figcaption>
+              <span class="tag">Forest</span>
+              <strong>Fern Light</strong>
+              <small>Photo: Unsplash</small>
+            </figcaption>
+          </figure>
+
+          <figure class="slide">
+            <img src="images/ocean.jpg"
+                 alt="Aerial view of turquoise ocean waves breaking on pale sand">
+            <figcaption>
+              <span class="tag">Ocean</span>
+              <strong>Where Land Meets Sea</strong>
+              <small>Photo: Nattu Adnan · Unsplash</small>
+            </figcaption>
+          </figure>
+
+          <figure class="slide">
+            <img src="images/desert.jpg"
+                 alt="Footprints crossing soft sand dunes with dry grass">
+            <figcaption>
+              <span class="tag">Dunes</span>
+              <strong>Footprints in the Sand</strong>
+              <small>Photo: David Emrich · Unsplash</small>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <h2>About This Project</h2>
+      <p>
+        This slider uses HTML for structure, CSS for layout and sliding
+        motion, and JavaScript for the controls and the infinite loop. It
+        supports arrows, clickable dots, keyboard keys, swipe and drag,
+        and optional autoplay.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Created by <strong>Tanka Joshi</strong></p>
+    <p class="credits">
+      All photos are free to use under the
+      <a href="https://unsplash.com/license" target="_blank"
+         rel="noopener noreferrer">Unsplash License</a>.
+    </p>
+    <p class="copy">
+      &copy; <span id="year">2026</span> Tanka Joshi. All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    // slider.js is deferred, so wait for the page before creating the slider.
+    window.addEventListener("DOMContentLoaded", () => {
+      window.gallery = new ImageSlider("#gallery", {
+        duration: 650,    // slide animation time (ms)
+        autoplay: true,   // advance automatically
+        interval: 5000    // time between slides (ms)
+      });
+      document.getElementById("year").textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
